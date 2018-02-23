@@ -1,0 +1,9 @@
+*New in this version:*
+*QA fixes:*
+* <a href="https://jira.rccl.com/browse/GA-23250  ">GA-23250</a>(Android) (Bug) [Regression] : Migration - Avatar shows wrong initials when user has double barreled last name
+* <a href="https://jira.rccl.com/browse/GA-23178  ">GA-23178  </a>Discovery Only - Voyage Picker is displayed only one voyage [Android]
+* <a href="https://jira.rccl.com/browse/GA-22924  ">GA-22924 </a>(Android and iOS) Settings- Sign out: Inconsistency copy in Sign out pop up
+current year
+* <a href="https://jira.rccl.com/browse/GA-22586  ">GA-22586 </a>[Analytics] Context Data Variable Naming Discrepancy (Android)
+* <a href="https://jira.rccl.com/browse/GA-21379 ">GA-21379 </a>(Android)(Bug)[Exploratory]: DOB field shows error with red background even after clearing all the invalid values.
+*Important if you have already installed Royal Core applications please uninstall it *
