@@ -30,3 +30,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
+
+android.testOptions.unitTests.all {
+    // Configure whether failing tests should fail the build
+    ignoreFailures false
+
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+    }
+}
