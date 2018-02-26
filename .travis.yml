@@ -39,4 +39,4 @@ script:
 # TODO: depending on the target branch (development / release / master) 
 # execute different build command
   - echo "Building app"
-  - ./gradlew assembleDebug
+  - ./gradlew app:clean app:testDebugUnitTest app:assembleDebug
