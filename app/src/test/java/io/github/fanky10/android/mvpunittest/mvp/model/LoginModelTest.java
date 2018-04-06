@@ -10,7 +10,9 @@ import java.util.List;
 
 import io.github.fanky10.android.mvpunittest.data.entities.User;
 import io.github.fanky10.android.mvpunittest.data.repository.UsersRepository;
+import io.github.fanky10.android.mvpunittest.mvp.LoginContract;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
@@ -19,7 +21,7 @@ public class LoginModelTest {
 
     private @Mock UsersRepository usersRepository;
     private @Mock User user;
-    private LoginModel loginModel;
+    private LoginContract.Model loginModel;
 
     @Before
     public void setUp() {
@@ -43,6 +45,16 @@ public class LoginModelTest {
         when(user.getUsername()).thenReturn("mockUsername");
         when(user.getPassword()).thenReturn("mockPassword");
         assertFalse(loginModel.authenticateUser("username", "password"));
+        assertFalse(loginModel.authenticateUser("mockUsername", "password"));
+        assertFalse(loginModel.authenticateUser("username", "mockPassword"));
+    }
+
+    @Test
+    public void shouldNotAuthenticateUnexistingUser() {
+        when(usersRepository.getUsers()).thenReturn(null);
+        boolean then = loginModel.authenticateUser("username", "password");
+        boolean expect = false;
+        assertEquals(expect, then);// expect
     }
 
 }
